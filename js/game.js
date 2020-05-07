@@ -46,6 +46,9 @@ const startGame = () => {
 };
 
 getNewQuestion = () => {
+  if (availableQuestion.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    return window.location.assign("./end.html");
+  }
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestion.length);
   currentQuestion = availableQuestion[questionIndex];
