@@ -64,6 +64,9 @@ getNewQuestion = () => {
 };
 
 choices.forEach((choice) => {
+  const number = choice.dataset["number"];
+  const val = choice.parentElement;
+
   choice.addEventListener("click", (e) => {
     if (!acceptingAnswers) return;
 
@@ -72,13 +75,35 @@ choices.forEach((choice) => {
     const selectedAnswer = selectedChoice.dataset["number"];
     const classToApply =
       selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-    // if(selectedAnswer == currentQuestion.answer) {
-    //     classToApply = "correct"
-    // }
 
     selectedChoice.parentElement.classList.add(classToApply);
-    console.log(classToApply);
-    getNewQuestion();
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      getNewQuestion();
+    }, 1000);
+    // const rightAnswer = "correct";
+    // const wrongAnswer = "incorrect";
+    // if (selectedAnswer == currentQuestion.answer) {
+    //   selectedChoice.parentElement.classList.add(rightAnswer);
+    //   setTimeout(() => {
+    //     selectedChoice.parentElement.classList.remove(rightAnswer);
+    //     getNewQuestion();
+    //   }, 1000);
+    // } else if(number == currentQuestion.answer) {
+    //   for (let i = 0; i <= val.length; i++) {
+    //     if (i == currentQuestion.answer) {
+    //       console.log(val[i]);
+    //     }
+    //   }
+    //   selectedChoice.parentElement.classList.add(wrongAnswer);
+
+    //   setTimeout(() => {
+    //     selectedChoice.parentElement.classList.remove(wrongAnswer);
+    //     val.classList.add(rightAnswer);
+    //     getNewQuestion();
+    //   }, 1000);
+    // }
+    // getNewQuestion();
   });
 });
 
