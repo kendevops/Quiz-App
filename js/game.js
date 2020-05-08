@@ -12,7 +12,7 @@ let questions = [
     question: "Inside which HTML element do we put the Javascript??",
     choice1: "<script> Tag",
     choice2: "<Javascript> Tag",
-    choice3: "<js> Tag",
+    choice3: "<Js> Tag",
     choice4: "<scripting> Tag",
     answer: 1,
   },
@@ -41,7 +41,6 @@ const MAX_QUESTIONS = 3;
 const startGame = () => {
   (questionCounter = 0), (score = 0);
   availableQuestion = [...questions];
-  console.log(availableQuestion);
   getNewQuestion();
 };
 
@@ -71,6 +70,11 @@ choices.forEach((choice) => {
     acceptingAnswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
+    const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+    // if(selectedAnswer == currentQuestion.answer) {
+    //     classToApply = "correct"
+    // }
+    console.log(selectedAnswer == currentQuestion.answer);
     getNewQuestion();
   });
 });
