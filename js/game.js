@@ -31,7 +31,7 @@ let questions = [
     choice2: "msgBox('Hello World');",
     choice3: "console.log('Hello World');",
     choice4: "alert('Hello World');",
-    answer: 1,
+    answer: 4,
   },
 ];
 
@@ -70,11 +70,14 @@ choices.forEach((choice) => {
     acceptingAnswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
-    const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+    const classToApply =
+      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
     // if(selectedAnswer == currentQuestion.answer) {
     //     classToApply = "correct"
     // }
-    console.log(selectedAnswer == currentQuestion.answer);
+
+    selectedChoice.parentElement.classList.add(classToApply);
+    console.log(classToApply);
     getNewQuestion();
   });
 });
