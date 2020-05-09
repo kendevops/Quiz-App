@@ -33,4 +33,18 @@
   background-color: #dc3545;
 }
 
+/* Head Unit Display */
+#hud {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
 
+.hud-prefix {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.hud-main-text {
+  text-align: center;
+}
