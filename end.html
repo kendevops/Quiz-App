@@ -8,7 +8,28 @@
   </head>
   <body>
     <div class="container">
-      <div id="end" class="flex-center flex-column"></div>
+      <div id="end" class="flex-center flex-column">
+        <h1 id="finalScore">0</h1>
+        <form action="">
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="username"
+          />
+          <button
+            type="submit"
+            class="btn"
+            id="saveScoreBtn"
+            onclick="saveHighScore(event)"
+          >
+            Save
+          </button>
+          <a href="./game.html" class="btn">Play Again</a>
+          <a href="./index.html" class="btn">Go Home</a>
+        </form>
+      </div>
     </div>
+    <script src="./js/end.js"></script>
   </body>
 </html>
