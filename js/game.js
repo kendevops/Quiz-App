@@ -50,6 +50,7 @@ const startGame = () => {
 getNewQuestion = () => {
   if (availableQuestion.length === 0 || questionCounter >= MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
+    console.log(localStorage.length);
     return window.location.assign("./end.html");
   }
   questionCounter++;
@@ -71,9 +72,6 @@ getNewQuestion = () => {
 };
 
 choices.forEach((choice) => {
-  const number = choice.dataset["number"];
-  const val = choice.parentElement;
-
   choice.addEventListener("click", (e) => {
     if (!acceptingAnswers) return;
 
