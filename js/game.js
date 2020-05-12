@@ -88,29 +88,6 @@ choices.forEach((choice) => {
       selectedChoice.parentElement.classList.remove(classToApply);
       getNewQuestion();
     }, 1000);
-    // const rightAnswer = "correct";
-    // const wrongAnswer = "incorrect";
-    // if (selectedAnswer == currentQuestion.answer) {
-    //   selectedChoice.parentElement.classList.add(rightAnswer);
-    //   setTimeout(() => {
-    //     selectedChoice.parentElement.classList.remove(rightAnswer);
-    //     getNewQuestion();
-    //   }, 1000);
-    // } else if(number == currentQuestion.answer) {
-    //   for (let i = 0; i <= val.length; i++) {
-    //     if (i == currentQuestion.answer) {
-    //       console.log(val[i]);
-    //     }
-    //   }
-    //   selectedChoice.parentElement.classList.add(wrongAnswer);
-
-    //   setTimeout(() => {
-    //     selectedChoice.parentElement.classList.remove(wrongAnswer);
-    //     val.classList.add(rightAnswer);
-    //     getNewQuestion();
-    //   }, 1000);
-    // }
-    // getNewQuestion();
   });
 });
 
